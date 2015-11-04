@@ -34,6 +34,13 @@ public class controller : MonoBehaviour {
 		else if (Input.GetKey(KeyCode.RightArrow)) {
 			transform.Translate(Vector3.right * Time.deltaTime * speed);
 		}
+		else if (Input.GetKey(KeyCode.Space)) {
+			GameObject miss = Resources.Load("Missile") as GameObject;
+		//coin.transform.localPosition = randPos;
+		// clone
+			Instantiate(miss, new Vector2(transform.localPosition.x + 2f, 
+				transform.localPosition.y), Quaternion.identity);
+		}
 	}
 	void OnCollisionEnter2D(Collision2D col)
 	{
