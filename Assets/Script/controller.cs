@@ -43,6 +43,8 @@ public class controller : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D collision)
 	{
 		Debug.Log("trigeer!!!!!!!!");
+		var mineAudio = transform.GetComponent<AudioSource>();
+		mineAudio.Play();
 		Destroy(collision.gameObject);
 	}
 }
